@@ -1,6 +1,7 @@
 # ---------- Import ----------
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10000)
 
 # ---------- Function ----------
 def DFS(x, y):
@@ -14,20 +15,21 @@ def DFS(x, y):
         DFS(x, y+1)
         DFS(x, y-1)
         
-        return True   
+        return True
+    
     return False
 
 # ---------- Main ----------
 caseT = int(input())
 
 for _ in range(caseT):
-    row, col, cabbage = map(int, input().split())
+    col, row, cabbage = map(int, input().split())
     graph = [[0] * col for _ in range(row)]
     
     for _ in range(cabbage):
-        X, Y = map(int, input().split())
+        Y, X = map(int, input().split())
         graph[X][Y] = 1
-        
+
     cnt = 0
     for r in range(row):
         for c in range(col):

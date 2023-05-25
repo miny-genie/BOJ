@@ -3,6 +3,7 @@ import sys
 input = sys.stdin.readline
 
 # ---------- Function ----------
+# https://yiyj1030.tistory.com/230
 def nearestNum(array: list, target: int, left: int, right: int) -> int:
     while left <= right:
         mid = (left + right) // 2
@@ -48,6 +49,7 @@ def minMinusPoint(A: list, B: list, C: list) -> int:
     return MIN
 
 # ---------- Main ----------
+# https://velog.io/@qwerty1434/%EB%B0%B1%EC%A4%80-16498%EB%B2%88-%EC%9E%91%EC%9D%80-%EB%B2%8C%EC%A0%90
 a, b, c = map(int, input().split())
 cardA = list(map(int, input().split())); cardA.sort()
 cardB = list(map(int, input().split())); cardB.sort()
