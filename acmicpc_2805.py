@@ -12,19 +12,16 @@ while start <= end:
 
     totalLength = 0
     for tree in trees:
-        remain = tree - mid
-        if remain > 0:
-            totalLength += remain
+        if tree > mid:
+            totalLength += tree - mid
 
     # length is enough, so cut higher
-    if totalLength > treeLength:
+    if totalLength >= treeLength:
         start = mid + 1
 
     # length is not enough, so cut lower
-    elif totalLength < treeLength:
+    else:
         end = mid - 1
 
-    else:
-        break
-
-print(mid)
+# not mid
+print(end)
