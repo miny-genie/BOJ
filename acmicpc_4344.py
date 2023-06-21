@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 # ---------- Fcuntion ----------
 def roundTraditional(val, digits):
-    return round(val+10**(-len(str(val))-1), digits)
+    return round(val + 10**(-len(str(val)) - 1), digits)
 
 # ---------- Main ----------
 T = int(input())
