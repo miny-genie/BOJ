@@ -25,6 +25,8 @@ for _ in range(T):
     print(f'{roundTraditional(result, 3):.3f}%')
     
 # ---------- Comment ----------
+# for k in [*open(0)][1:]:N,*l =map(int,k.split());print(f"{sum(i*N>sum(l)for i in l)/N+9**-9:.3%}")
+
 # 일반적인 반올림 코드 문제는 IEEE 754에 따라 오사오입 반올림 방식을 사용힌디.
 # 그리고 C, C++, Python의 반올림 함수들은 오사오입 방식으로 계산한다.
 # 하지만 이 문제는 사사오입 방식으로 채점을 진행한다.
