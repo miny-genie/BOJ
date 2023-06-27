@@ -31,4 +31,3 @@ for start in range(len(INPUT)):
                 index += 1
         
 print(result) if result and all(checkList) else print(-1)
-
