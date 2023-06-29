@@ -10,7 +10,7 @@ QUACK = ["q", "u", "a", "c", "k"]
 # 'quack' len is 5, so INPUT must be multiply 5
 if len(INPUT) % 5 != 0:
     print(-1); exit()
-    
+
 result = 0
 for start in range(len(INPUT)):
     index, isFirst = 0, 1
