@@ -9,7 +9,6 @@ input = sys.stdin.readline
 # ---------- Function ----------
 def BFS(row: int, col: int, lab: list) -> int:
     result = 0
-    FLAG = 0
     
     # UP, DN, LFT, RHT
     dx = [-1, 1, 0, 0]
