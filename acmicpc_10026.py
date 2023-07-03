@@ -1,7 +1,7 @@
 # ---------- Import ----------
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(30_000)
+sys.setrecursionlimit(20_000)
 
 # ---------- Function ----------
 def DFS(x: int, y: int, value: str) -> int:
