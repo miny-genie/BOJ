@@ -67,5 +67,5 @@ print(answer.replace("0", "4").replace("1", "7"))
 #     print(str(bin(N + 1)), end=" ")
 #     print(str(bin(N + 1))[3:])
     
-# # -------------------- Case 5 --------------------
+# # -------------------- Case 5: AC, Using Case 4 theory --------------------
 # # Main
