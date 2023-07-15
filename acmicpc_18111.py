@@ -73,7 +73,7 @@ for currentH in range(min(keys), max(keys)+1):
     difList = [(currentH - height) * count for height, count in ground.items()]
     needBlock = sum(difList)
     spendTime = sum(map(lambda x: x if x > 0 else -2 * x, difList))
-    
+    print(currentH, difList, needBlock, spendTime)
     # Checking inventory
     if needBlock <= inventory:
         minTime = min(minTime, spendTime)
