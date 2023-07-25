@@ -1,4 +1,3 @@
-# -------------------- Case 1 --------------------
 # ---------- Import ----------
 import sys
 input = sys.stdin.readline
