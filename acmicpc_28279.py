@@ -1,7 +1,9 @@
+# ---------- Import ----------
 from collections import deque
 import sys
 input = sys.stdin.readline
 
+# ---------- Main ----------
 dequeue = deque()
 
 for _ in range(int(input())):
