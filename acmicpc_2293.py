@@ -15,7 +15,10 @@
 #     for k in range(1, K+1):
 #         dp[i][k] += dp[i-1][k] + dp[i][k-coin]
         
-# # print(sys.getsizeof(dp))
+# for line in dp:
+#     print(line)
+
+# # # print(sys.getsizeof(dp))
 
 
 # -------------------- Case 2: AC --------------------
