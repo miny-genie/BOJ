@@ -17,7 +17,7 @@ for _ in range(brand):
     cheapest_per = min(cheapest_per, per)
 
 # 낱개로 6개 사는 게 묶음으로 사는 것보다 싸면, 낱개로만 구매
-if cheapest_bundle >= cheapest_per * 6:
+if cheapest_bundle >= (cheapest_per * 6):
     print(cheapest_per * guitar_line)
 
 else:
@@ -26,7 +26,7 @@ else:
     compare1 = (div * cheapest_bundle) + (mod * cheapest_per)
     
     # 번들로만 다 사는 경우(기타줄이 남을 수 있음)
-    compare2 = cheapest_bundle * math.ceil(guitar_line / 6)
+    compare2 = (cheapest_bundle * math.ceil(guitar_line / 6))
     
     # 둘 중 더 작은 가격 출력
     print(min(compare1, compare2))
