@@ -38,3 +38,8 @@ try:
 
 except:
     exit()
+    
+# ---------- Comment ----------
+# x mod n = (x mod n) mod n
+# (a + b) mod n = (a mod n + b mod n) mod n
+# (a * b) mod n = (a mod n * b mod n) mod n
