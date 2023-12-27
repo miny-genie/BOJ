@@ -31,7 +31,7 @@ def power(base, exponent):
 
 # ---------- Main ----------
 N = int(input())
-oneMatrix, MOD = [[1, 1], [1, 0]], 1000000007
+oneMatrix, MOD = [[1, 1], [1, 0]], 1_000_000
 
 tmpResult = power(oneMatrix, N)
 result = mulMatrix(tmpResult, [[1, 0],[0, 0]])
@@ -39,4 +39,4 @@ result = mulMatrix(tmpResult, [[1, 0],[0, 0]])
 print(result[1][0])
 
 # ---------- Comment ----------
-# 1160번, 2749번 문제와 동일하다.
+# 1160번, 2749번, 11444번, 15712번의 매커니즘은 동일하다.

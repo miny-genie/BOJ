@@ -1,7 +1,6 @@
 # ---------- Import ----------
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(1000000)
 
 # ---------- Function ----------
 def mulMatrix(A: list, B: list) -> list:
@@ -28,15 +27,19 @@ def power(base, exponent):
     else:
         return mulMatrix(tmp, tmp)
 
-
 # ---------- Main ----------
-N = int(input())
-oneMatrix, MOD = [[1, 1], [1, 0]], 1000000007
+MOD, coef, intercept, first, nth, FINAL = map(int, input().split())
 
-tmpResult = power(oneMatrix, N)
-result = mulMatrix(tmpResult, [[1, 0],[0, 0]])
+coef %= MOD
+intercept %= MOD
 
-print(result[1][0])
+power_list = [0] * (nth + 1)
+power_list[0] = 1
+
+tmp1 = (power(coef, nth) * first) % MOD
+tmp2 = sigma(power_list, 0, nth) % MOD
+answer = (tmp1 + tmp2) % MOD % FINAL
+print(answer)
 
 # ---------- Comment ----------
-# 1160번, 2749번 문제와 동일하다.
+# 1160번, 2749번, 11444번, 15712번의 매커니즘은 동일하다.
