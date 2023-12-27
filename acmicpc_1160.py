@@ -2,6 +2,7 @@
 import sys
 input = sys.stdin.readline
 
+
 # ---------- Function ----------
 def mulMatrix(A: list, B: list) -> list:
     N = 2
@@ -27,19 +28,16 @@ def power(base, exponent):
     else:
         return mulMatrix(tmp, tmp)
 
+
 # ---------- Main ----------
 MOD, coef, intercept, first, nth, FINAL = map(int, input().split())
 
-coef %= MOD
-intercept %= MOD
+first  = [[first, 1], [0, 0]]
+matrix = [[coef, 0], [intercept, 1]]
 
-power_list = [0] * (nth + 1)
-power_list[0] = 1
-
-tmp1 = (power(coef, nth) * first) % MOD
-tmp2 = sigma(power_list, 0, nth) % MOD
-answer = (tmp1 + tmp2) % MOD % FINAL
-print(answer)
+answer = mulMatrix(first, power(matrix, nth))
+print(answer[0][0] % FINAL)
 
 # ---------- Comment ----------
 # 1160번, 2749번, 11444번, 15712번의 매커니즘은 동일하다.
+# https://memoacmicpc.tistory.com/entry/%EB%B0%B1%EC%A4%80-1160%EB%B2%88-Random-Number-Generator
