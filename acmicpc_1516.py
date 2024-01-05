@@ -38,7 +38,5 @@ while Q:
         
         if not inDegree[next]:
             Q.append(next)
-    
-    
 
 print(*dp[1:], sep="\n")
