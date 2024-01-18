@@ -24,13 +24,16 @@ def factorial(goal: int) -> list:
     return dp
 
 # ---------- Main ----------
-N, K = map(int, input().split())
-dp = factorial(max(N, K))
+dp = factorial(2_000_000)
 
-UP = dp[N]
-DN = dp[N-K] * dp[K] % MOD
+for _ in range(int(input())):
+    K = int(input())
+    N = 2 * K
 
-print(UP * power(DN, MOD-2) % MOD)
+    UP = dp[N]
+    DN = dp[K] * dp[K] * (K+1) % MOD
 
+    print(UP * power(DN, MOD-2) % MOD)
+    
 # ---------- Comment ----------
 # 9343번, 11401번, 13977번, 15791번, 16134번 문제와 동일하다.
