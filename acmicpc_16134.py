@@ -42,7 +42,7 @@ denominator = factorial(N-K) * factorial(K) % MOD   # 분모
 print(numerator * power(denominator, MOD-2) % MOD)
 
 # ---------- Comment ----------
-# 11401번 백준 문제와 동일하다.
+# 11401번, 13977번, 15791번, 16134번 문제와 동일하다.
 
 # 페르마의 소정리 : 정수 a와 P가 있을 때, 다음을 만족한다.
 # a^P ≡ a mod P
