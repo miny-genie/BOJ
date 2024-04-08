@@ -32,3 +32,6 @@ start = tuple(i for i in range(1, length+1))
 
 answer = Find_Case(start, GOAL, K)
 print(answer)
+
+# ---------- Comment ----------
+# 11112번 문제랑 같은 개념
