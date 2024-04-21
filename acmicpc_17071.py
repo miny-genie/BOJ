@@ -1,30 +1,46 @@
-# ---------- Import ----------
 from collections import deque
 import sys
 input = sys.stdin.readline
 
-# ---------- Function ----------
-def BFS(old, young):
-    queue = deque([(old, young, 1)])
-    visited = [[0] * 500_001 for _ in range(3)]
+MAX = 500_000
+INIT, EVEN = -1, 0
+
+
+def bfs(start: int) -> list:
+    visited = [[INIT, INIT] for _ in range(MAX+1)]
+    visited[start][EVEN] = 0
     
-    while queue:
-        o, y, dist = queue.popleft()
+    Q = deque([(start, 0)])
+    while Q:
+        cur_x, sec = Q.popleft()
+        
+        for dx in [1, -1, cur_x]:
+            nx = cur_x + dx
+            
+            # out of bound or already visited
+            if nx < 0 or nx > MAX or visited[nx][(sec+1) % 2] != INIT:
+                continue
+            
+            Q.append((nx, sec+1))
+            visited[nx][(sec+1) % 2] = sec + 1
+    
+    return visited
 
-        if y > 500_000:
-            return -1
 
-        if o == y:
-            return dist - 1
-
-        for i, next_old in enumerate([o*2, o+1, o-1]):
-            if 0 <= next_old <= 500_000 and visited[i][next_old] == 0:
-                queue.append((next_old, y+dist, dist+1))
-                visited[i][next_old] = 1
-
-    return -1
-
-# ---------- Main ----------
 old, young = map(int, input().split())
-answer = BFS(old, young)
+visited = bfs(old)
+
+answer = -1
+for second, i in enumerate(range(MAX+1)):
+    young += i
+    
+    # end condition, out of bound
+    if young > MAX:
+        break
+    
+    # end condition, find out
+    if visited[young][second % 2] <= second:
+        answer = second
+        break
+    
 print(answer)
