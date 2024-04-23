@@ -2,35 +2,37 @@ from sys import stdin
 input = stdin.readline
 
 
-def find_lis(arr: list) -> tuple[int, list]:
-    n = len(arr)
-    dp = [1] * n
-    parent = [-1] * n
+def find_lis(nums: list) -> tuple[int, list]:
+    from bisect import bisect_left
     
-    # store LIS length and preIndex
-    for cur in range(1, n):
-        for pre in range(cur):
-            if arr[pre] < arr[cur] and dp[cur] < dp[pre] + 1:
-                dp[cur] = dp[pre] + 1
-                parent[cur] = pre
-    
-    #  find LIS length and start point
-    lis_length = max(dp)
-    lis_start = dp.index(lis_length)
-    
-    # tracking LIS
-    lis = list()
-    current = lis_start
-    while current != -1:
-        lis.append(arr[current])
-        current = parent[current]
-    lis.reverse()
+    n = len(nums)
+    tails = list()
+    prev = [-1] * n
+    subseq = [-1] * n
         
-    return lis_length, lis
-
+    for i in range(n):
+        index = bisect_left(tails, nums[i])
+        if index == len(tails):
+            tails.append(nums[i])
+        else:
+            tails[index] = nums[i]
+            
+        if index:
+            prev[i] = subseq[index - 1]
+        subseq[index] = i
+            
+    k = subseq[len(tails) - 1]
+    lis = list()
+    while k != -1:
+        lis.append(nums[k])
+        k = prev[k]
+    lis.reverse()
+    
+    return len(tails), lis
 
 _ = int(input())
 nums = list(map(int, input().split()))
+
 length, lis = find_lis(nums)
 print(length)
 print(*lis)
