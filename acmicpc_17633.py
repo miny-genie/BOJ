@@ -63,7 +63,7 @@ def lagrange_theorem(num: int) -> int:
             div = pollard_rho(n)
             prime_dict[div] += 1
             n //= div
-        
+
         for prime, count in prime_dict.items():
             if prime % 4 == 3 and count % 2 == 1:
                 return True
