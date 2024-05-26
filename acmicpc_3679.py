@@ -64,3 +64,10 @@ for _ in range(test_case):
     ]
     hull = graham_scan(points)
     print(*hull)
+    
+    
+# ---------- Comment ----------
+# dataclass는 Python 3.7에 도입한 기능
+# 데이터 중심 클래스의 보일러플레이트 코드를 줄이는 데 유용
+# __init__(), __repr__(), __eq__() 등의 메소드를 자동으로 생성
+# 해당 부분에서 오버헤드가 발생하여 최적화, 메모리, 시간에서 차이가 발생
