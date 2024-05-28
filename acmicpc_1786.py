@@ -19,7 +19,7 @@ def compute_lps(word: str) -> list:
                 length = lps[length - 1]
             else:
                 lps[i] = 0
-                i += 1        
+                i += 1
     return lps
 
 
@@ -27,7 +27,6 @@ def kmp_search(text: str, pattern: str) -> list:
     text_length = len(text)
     pattern_length = len(pattern)
     lps = compute_lps(pattern)
-    print(lps)
     
     search_list = []
     text_idx, pattern_idx = 0, 0
