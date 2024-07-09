@@ -14,20 +14,16 @@ def generate_triangle_nums() -> list:
     return ret
 
 
-def is_triangle_sum(num: int) -> bool:
+def is_triangle_sum(num: int) -> int:
     triangle_nums = generate_triangle_nums()
-    
     for fir in triangle_nums:
         for sec in triangle_nums:
             for thi in triangle_nums:
                 if fir + sec + thi == num:
-                    return True
-    return False
+                    return 1
+    return 0
 
 
 for _ in range(int(input())):
     num = int(input())
-    if is_triangle_sum(num):
-        print(1)
-    else:
-        print(0)
+    print(is_triangle_sum(num))
