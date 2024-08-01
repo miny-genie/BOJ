@@ -39,4 +39,3 @@ def faulhaber_formula(N: int, K: int) -> int:
 n, k = map(int, input().split())
 answer = faulhaber_formula(n, k)
 print(answer)
-
