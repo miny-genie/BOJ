@@ -59,3 +59,4 @@ for _ in range(test_case):
     hull = graham_scan(points)
     print(len(hull))
     print_elements(hull)
+    
