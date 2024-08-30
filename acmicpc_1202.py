@@ -14,8 +14,6 @@ def find_max_price(jewels: heapq, bags: list) -> int:
             heappush(temp, -heappop(jewels)[VALUE])
         if temp:
             max_price -= heappop(temp)
-        elif not jewels:
-            break
     return max_price
 
 
