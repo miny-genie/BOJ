@@ -9,7 +9,7 @@ def fill_board(board: str) -> str:
         if parts[0] == ".":
             ret.append(parts)
         else:
-            if len(parts) == 1:
+            if len(parts) % 2 == 1:
                 return -1
             elif len(parts) % 4 == 0:
                 ret.append("A" * len(parts))
