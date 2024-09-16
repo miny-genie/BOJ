@@ -51,20 +51,26 @@ def bfs(graph: list[list[int]], row: int, col: int, visited: list[bool]) -> bool
 
 n, min_diff, max_diff = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
-
 move_count = 0
+
 while True:
     visited = [[False] * n for _ in range(n)]
     anyone_move = False
     
+    # Check all ground
     for row in range(n):
         for col in range(n):
+            
+            # Never been part of association
             if not visited[row][col]:
                 move_state = bfs(graph, row, col, visited)
                 anyone_move |= move_state
     
+    # End condition: no one move
     if not anyone_move:
         break
+    
+    # Any popluation move
     else:
         move_count += 1
     
