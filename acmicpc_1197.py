@@ -1,48 +1,42 @@
-# ---------- Import ----------
-import sys
-input = sys.stdin.readline
+from sys import stdin, setrecursionlimit
+setrecursionlimit(100_002)
+input = stdin.readline
 
 
-# ---------- Function ----------
-def Union(node1: int, node2: int, parent: list):
-    root1 = Find(node1, parent)
-    root2 = Find(node2, parent)
-    
-    if root1 < root2: parent[root2] = root1
-    else: parent[root1] = root2
+def union(node1: int, node2: int, parent: list):
+    root1 = find(node1, parent)
+    root2 = find(node2, parent)    
+    if root1 < root2:
+        parent[root2] = root1
+    else:
+        parent[root1] = root2
 
 
-def Find(node: int, parent: list) -> int:
-    if parent[node] == node: return node
-    else: return Find(parent[node], parent)
+def find(node: int, parent: list) -> int:
+    if parent[node] != node:
+        parent[node] = find(parent[node], parent)
+    return parent[node]
 
 
-def SpanningTree(info: list, parent: list) -> int:
+def spanning_tree(info: list, parent: list) -> int:
     total_cost = 0
-    connect = 0
-    
+    connect = 0    
     for cost, a, b in info:
-        if Find(a, parent) != Find(b, parent):
-            Union(a, b, parent)
+        if find(a, parent) != find(b, parent):
+            union(a, b, parent)
             total_cost += cost
             connect += 1
-            
     return total_cost
 
 
-# ---------- Main ----------
 nodes, edges = map(int, input().split())
 
-# Edges information input
-info = []
+graph_info = []
 for _ in range(edges):
-    A, B, cost = map(int, input().split())
-    info.append((cost, A-1, B-1))
-info.sort()
+    u, v, cost = map(int, input().split())
+    graph_info.append((cost, u-1, v-1))
+graph_info.sort()
 
-# Init
 parent = [i for i in range(nodes+1)]
-
-# Kruskal algorithm
-answer = SpanningTree(info, parent)
-print(answer)
+spanning_tree_weight = spanning_tree(graph_info, parent)    # Kruskal algorithm
+print(spanning_tree_weight)
