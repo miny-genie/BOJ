@@ -16,7 +16,6 @@ def compute_min_diff(sour_grades: list, bitter_grades: list) -> int:
                 sour_diff *= sour_grades[idx]
                 bitt_diff += bitter_grades[idx]
         min_diff = min(min_diff, abs(sour_diff - bitt_diff))
-        
     return min_diff
 
 
