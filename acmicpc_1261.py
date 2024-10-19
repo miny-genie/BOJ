@@ -25,7 +25,7 @@ def bfs(row: int, col: int, maze: list) -> int:
             if maze[nx][ny] == WALL:
                 if distance[nx][ny] > break_time + 1:
                     distance[nx][ny] = break_time + 1
-                    queue.appendleft((break_time + 1, nx, ny))
+                    queue.append((break_time + 1, nx, ny))
             else:
                 if distance[nx][ny] > break_time:
                     distance[nx][ny] = break_time
