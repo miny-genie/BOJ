@@ -50,8 +50,8 @@ def get_max_profit(node_count, start_city, end_city, edges, profits) -> str|int:
     
     # End node is unreachable
     elif isinstance(dist[end_city], float):
-        return "gg"            
-            
+        return "gg"
+    
     return dist[end_city]
 
 
