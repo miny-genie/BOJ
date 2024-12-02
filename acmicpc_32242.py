@@ -158,7 +158,7 @@ a, b, c, d = map(int, input().split())
 solve_equation(a, b, c, d)
 
 # 24.11.29
-# Platinum 2: 2092 > Platinum 1: 0000 (+8pts)
+# Platinum 2: 2092 > Platinum 1: 2100 (+8pts)
 # 승급까지 -8 > -100
 
 # 21%에서 틀린 이유: gcd의 잘못된 구현
