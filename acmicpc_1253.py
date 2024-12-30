@@ -7,9 +7,18 @@ def find_pair(goal: int, nums: list[int]) -> bool:
     
     while lft < rgt:
         cur_sum = nums[lft] + nums[rgt]
-        if cur_sum == goal: return True
-        elif cur_sum < goal: lft += 1
-        else: rgt -= 1
+        
+        # end condition
+        if cur_sum == goal:
+            return True
+        
+        # can increase the number
+        elif cur_sum < goal:
+            lft += 1
+        
+        # reduce the number
+        else:
+            rgt -= 1
         
     return False
 
