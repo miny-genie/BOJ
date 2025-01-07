@@ -58,7 +58,7 @@ def simulation() -> list:
         
         else:
             result.append(current_room)
-        
+    
     return result
 
 
@@ -70,6 +70,6 @@ parents, costs = find_parents(room_count, edges)
 result = simulation()
 print(*result, sep='\n')
 
-# 25.01.06
+# 25.01.07
 # Platinum 1: 2169 > 2170 (+1pts)
 # 승급까지 -31 > -30
