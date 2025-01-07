@@ -36,7 +36,7 @@ def simulation() -> list:
             half_room, half_cost = sparse[room][pow2 - 1]
             next_room, next_cost = sparse[half_room][pow2 - 1]
             sparse[room][pow2] = (next_room, half_cost + next_cost)
-
+    
     result = []
     for room in range(1, room_count + 1):
         current_room = room
